@@ -4,7 +4,7 @@ public class Album {
     private String artist;
 
     public void setArtist(final String artist) {
-        this.artist = artist;
+        this.artist = artist.strip();
     }
 
     public String getArtist() {
@@ -14,7 +14,7 @@ public class Album {
     private String genre;
 
     public void setGenre(final String genre) {
-        this.genre = genre;
+        this.genre = genre.strip();
     }
 
     public String getGenre() {
@@ -28,13 +28,13 @@ public class Album {
     }
 
     public void setNameAlbum(final String nameAlbum) {
-        this.nameAlbum = nameAlbum;
+        this.nameAlbum = nameAlbum.strip();
     }
 
     private int edition;
 
     public void setEdition(final int edition) {
-        this.edition = edition;
+        this.edition = edition > 0 ? edition : 0;
     }
 
     public int getEdition() {
@@ -50,10 +50,6 @@ public class Album {
 
     @Override
     public String toString() {
-        return "Album: " +
-                "artist -  " + artist + '\'' +
-                ", genre - " + genre + '\'' +
-                ", name of album - " + nameAlbum + '\'' +
-                ", edition - " + edition;
+        return "Album: " + "artist - " + artist +"; genre - " + genre + "; name of album - " + nameAlbum + "; edition - " + edition + ".";
     }
 }
